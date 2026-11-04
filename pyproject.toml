@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sensor-data-quality-checks"
+version = "0.1.0"
+description = "Plausibility checks for sensor and measurement time series: time alignment, range, rolling z-score, frozen value and cross-check. Flags samples, never deletes them."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Abhishek Dubasi" }]
+keywords = ["sensor data", "data quality", "time series", "outlier detection", "measurement", "z-score"]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "black>=24", "ruff>=0.5", "mypy>=1.10", "pandas-stubs"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true

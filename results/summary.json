@@ -1,0 +1,13 @@
+{
+  "samples": 3000,
+  "flagged_samples": 61,
+  "flagged_percent": 2.03,
+  "correlation_a_b": 0.9963,
+  "flags_range_a": 0,
+  "flags_zscore_a": 0,
+  "flags_frozen_a": 0,
+  "flags_range_b": 0,
+  "flags_zscore_b": 1,
+  "flags_frozen_b": 59,
+  "flags_cross": 2
+}
