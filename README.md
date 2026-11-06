@@ -1,6 +1,6 @@
 # sensor-data-quality-checks
 
-<!-- CI badge is added together with the workflow file -->
+[![CI](https://github.com/AbhishekDubasi09/sensor-data-quality-checks/actions/workflows/ci.yml/badge.svg)](https://github.com/AbhishekDubasi09/sensor-data-quality-checks/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776ab)
 
