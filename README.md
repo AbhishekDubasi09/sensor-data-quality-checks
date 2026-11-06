@@ -68,7 +68,7 @@ all 3000 rows are in [`results/all_samples_with_flags.csv`](results/all_samples_
 
 ```bash
 pip install -e ".[dev]"
-python -m pytest                       # 14 tests
+python -m pytest                       # 17 tests
 python -m sensor_quality.demo --out results
 ```
 
