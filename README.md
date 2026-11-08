@@ -1,4 +1,6 @@
-# sensor-data-quality-checks
+# Trust Your Sensors: Plausibility Checks for Time Series
+
+*Repository: `sensor-data-quality-checks`.*
 
 [![CI](https://github.com/AbhishekDubasi09/sensor-data-quality-checks/actions/workflows/ci.yml/badge.svg)](https://github.com/AbhishekDubasi09/sensor-data-quality-checks/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
