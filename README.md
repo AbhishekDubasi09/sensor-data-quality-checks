@@ -70,11 +70,28 @@ all 3000 rows are in [`results/all_samples_with_flags.csv`](results/all_samples_
 
 ```bash
 pip install -e ".[dev]"
-python -m pytest                       # 17 tests
+python -m pytest                       # 22 tests
 python -m sensor_quality.demo --out results
 ```
 
 The demo is deterministic for a given `--seed` (default 7).
+
+### Use your own data
+
+```bash
+python -m sensor_quality.cli data.csv --time-col t --a-col probe_a --b-col probe_b \
+    --low 0 --high 150 --cross-limit 5 --out my_results
+```
+
+- The CSV needs one time column in seconds and two columns that measure the same quantity.
+- Probe B is interpolated onto the time stamps of probe A. Rows without a valid time stamp or with a
+  duplicate time stamp are not used as time points, and fewer than 20 usable rows is an error.
+- Missing values (NaN) cannot be interpolated. They are left out of the interpolation and counted as
+  `missing_a` and `missing_b` in `summary.json`. Every time stamp stays in the output.
+- You must choose `--low`, `--high` and `--cross-limit` from the physics and the sensors. There are no
+  defaults on purpose.
+- Output files: `all_samples_with_flags.csv`, `flagged_samples.csv`, `summary.json`.
+- Wrong input gives a short message and exit code 2.
 
 ```python
 from sensor_quality import align_to_reference, frozen_flags, zscore_flags
@@ -110,7 +127,7 @@ stuck = frozen_flags(aligned, min_run=8)
 ## Layout
 
 ```
-src/sensor_quality/   checks.py, pipeline.py, synthetic.py, demo.py
+src/sensor_quality/   checks.py, pipeline.py, synthetic.py, demo.py, cli.py
 tests/                unit tests for each check and for the pipeline
 results/              output of the demo run
 docs/                 the figure above
